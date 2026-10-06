@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rebuild Pro Contracting website
 
-## Getting Started
+Site 2 from the build brief: the interior general contracting brand. Next.js (App Router, TypeScript, Tailwind) with Supabase for the quote form and photo uploads. Every page is statically rendered HTML.
 
-First, run the development server:
+## Run it
 
 ```bash
+npm install
+cp .env.example .env.local   # then fill in the Supabase values
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | File |
+| --- | --- |
+| Brand name, phone, email, address, sister company links, credentials | `src/lib/site.ts` |
+| Service pages (9) | `src/content/services.ts` |
+| Area pages (9) | `src/content/areas.ts` |
+| Portfolio projects | `src/content/projects.ts` (photos go in `public/portfolio/`) |
+| Reviews | `src/content/reviews.ts` |
+| Guides | `src/content/guides.ts` |
+| Process and insurance steps, FAQs | `src/content/process.ts` |
+| Structured data (JSON-LD) | `src/lib/schema.ts` |
+| robots.txt, sitemap, llms.txt | `src/app/robots.ts`, `src/app/sitemap.ts`, `src/app/llms.txt/route.ts` |
+| Quote form | `src/components/QuoteForm.tsx`, `src/app/actions.ts` |
+| Database schema | `supabase/migrations/` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Before launch
 
-## Learn More
+Search the code for `PLACEHOLDER`. The items waiting on Joe or on business setup:
 
-To learn more about Next.js, take a look at the following resources:
+- Final brand name and domain. The name is in `src/lib/site.ts`, and also appears in page copy and metadata, so do a project-wide find and replace if it changes.
+- Phone number (call tracking number), email and business address. These must match the Google Business Profile exactly.
+- Sister company URLs for RapidDry Restoration and DryFort Waterproofing.
+- Credentials (WSIB, liability insurance, electrical licence): flip `confirmed` to `true` in `site.ts` once each is in place. Unconfirmed ones are not shown.
+- Warranty term: set `warrantyYears` in `site.ts`.
+- Reviews: add to `reviews.ts`. Review schema and star ratings appear automatically.
+- Portfolio: entries are marked `sample: true` and show "Sample scope" with empty photo panels. Replace with real projects and photos.
+- Cost ranges in `services.ts` and the "reply within one business day" promise: have Joe confirm.
+- `sameAs` links in `site.ts`: Google Business Profile, HomeStars, Houzz, BBB, Yelp.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tracking and search
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GA4 and Google Ads load only when `NEXT_PUBLIC_GA_ID` / `NEXT_PUBLIC_GADS_ID` are set. Quote submissions fire `generate_lead` and taps on any phone link fire `phone_call_click`, plus Ads conversions when the labels are set.
+- Add the Search Console and Bing verification codes to the env file, then submit `/sitemap.xml` in both.
+- IndexNow: after a deploy that adds or changes pages, run `npm run indexnow`.
+- Add a new guide to `src/content/guides.ts` at least twice a month and bump the `updated` date on any page you edit; it drives the "Last updated" line and the sitemap.

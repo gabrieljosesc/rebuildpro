@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", monospace;
+
+  --color-ink: #1b1915;
+  --color-ink-soft: #2d2924;
+  --color-accent: #b5442b;
+  --color-accent-dark: #8f3420;
+  --color-canvas: #f6f2ea;
+  --color-paper: #ece6d9;
+  --color-line: #d8d0c0;
+  --color-muted: #6b6459;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  font-variation-settings: "opsz" 72;
+}
+
+/* Monospace spec label: "01 / Services", "Last updated", breadcrumbs */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Thin rule with a numbered label, used to open each section */
+.rule {
+  border-top: 1px solid var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Hatch for photo placeholders, like an unfilled area on a drawing */
+.hatch {
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0 9px,
+    rgb(27 25 21 / 0.07) 9px 10px
+  );
+}
+
+/* Drawing grid, light, for the quote section */
+.gridpaper {
+  background-color: var(--color-ink);
+  background-image:
+    linear-gradient(rgb(246 242 234 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(246 242 234 / 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
