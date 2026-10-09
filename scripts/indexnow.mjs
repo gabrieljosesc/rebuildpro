@@ -5,7 +5,7 @@
 
 const KEY = "ea27b33e9804e65304935253437d8eb9";
 const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rebuildprocontracting.ca"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rebuildprocontracting.com"
 ).replace(/\/$/, "");
 
 const sitemap = await fetch(`${siteUrl}/sitemap.xml`).then((r) => {

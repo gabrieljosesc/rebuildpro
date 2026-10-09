@@ -13,10 +13,10 @@ export const site = {
   name: "Rebuild Pro Contracting", // working name, pending Ontario Business Registry
   shortName: "Rebuild Pro",
   url: (
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rebuildprocontracting.ca"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://rebuildprocontracting.com"
   ).replace(/\/$/, ""),
   phone: { display: "(647) 478-1394", e164: "+16474781394" },
-  email: "info@rebuildprocontracting.ca", // PLACEHOLDER
+  email: "info@rebuildprocontracting.com", // PLACEHOLDER
   // PLACEHOLDER: set once the business address is registered, e.g.
   // { street: "", city: "Toronto", region: "ON", postalCode: "", country: "CA" }
   address: null as null | {
