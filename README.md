@@ -31,7 +31,7 @@ npm run dev
 Search the code for `PLACEHOLDER`. The items waiting on Joe or on business setup:
 
 - Final brand name and domain. The name is in `src/lib/site.ts`, and also appears in page copy and metadata, so do a project-wide find and replace if it changes.
-- Phone number (call tracking number), email and business address. These must match the Google Business Profile exactly.
+- Email and business address (phone is set to (647) 478-1394). Name, address and phone must match the Google Business Profile exactly.
 - Sister company URLs for RapidDry Restoration and DryFort Waterproofing.
 - Credentials (WSIB, liability insurance, electrical licence): flip `confirmed` to `true` in `site.ts` once each is in place. Unconfirmed ones are not shown.
 - Warranty term: set `warrantyYears` in `site.ts`.

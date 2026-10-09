@@ -15,8 +15,7 @@ export const site = {
   url: (
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rebuildprocontracting.ca"
   ).replace(/\/$/, ""),
-  // PLACEHOLDER: Joe supplies the call tracking number.
-  phone: { display: "(416) 555-0134", e164: "+14165550134" },
+  phone: { display: "(647) 478-1394", e164: "+16474781394" },
   email: "info@rebuildprocontracting.ca", // PLACEHOLDER
   // PLACEHOLDER: set once the business address is registered, e.g.
   // { street: "", city: "Toronto", region: "ON", postalCode: "", country: "CA" }
