@@ -17,7 +17,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
       <div className={`${container} flex h-16 items-center justify-between gap-4`}>
-        <Link href="/" aria-label={`${site.name} home`}>
+        <Link href="/">
           <Logo />
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-6 lg:flex">

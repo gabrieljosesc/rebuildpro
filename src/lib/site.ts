@@ -12,9 +12,9 @@ export type Credential = {
 export const site = {
   name: "Rebuild Pro Contracting", // working name, pending Ontario Business Registry
   shortName: "Rebuild Pro",
-  url: (
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://rebuildprocontracting.ca"
-  ).replace(/\/$/, ""),
+  // The one canonical origin. The apex domain redirects here, so canonical
+  // tags, the sitemap, robots.txt and schema must all use the www form.
+  url: "https://www.rebuildprocontracting.ca",
   phone: { display: "(647) 478-1394", e164: "+16474781394" },
   email: "info@rebuildprocontracting.ca", // PLACEHOLDER
   // PLACEHOLDER: set once the business address is registered, e.g.

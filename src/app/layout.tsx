@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "en_CA",
   },
+  twitter: { card: "summary_large_image" },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
     other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION

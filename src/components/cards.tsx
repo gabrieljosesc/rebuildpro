@@ -79,7 +79,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent-dark">
           {project.category} · {project.area}
           {project.sample && (
-            <span className="rounded bg-paper px-1.5 py-0.5 text-ink/60">Sample scope</span>
+            <span className="rounded bg-paper px-1.5 py-0.5 text-ink/70">Sample scope</span>
           )}
         </p>
         <h3 className="mt-2 text-lg font-bold">{project.title}</h3>

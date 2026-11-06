@@ -4,9 +4,7 @@
 // The key must match the file public/<key>.txt.
 
 const KEY = "ea27b33e9804e65304935253437d8eb9";
-const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rebuildprocontracting.ca"
-).replace(/\/$/, "");
+const siteUrl = "https://www.rebuildprocontracting.ca";
 
 const sitemap = await fetch(`${siteUrl}/sitemap.xml`).then((r) => {
   if (!r.ok) throw new Error(`Could not load sitemap: ${r.status}`);
