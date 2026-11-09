@@ -42,5 +42,5 @@ Stock photos from Pexels (https://www.pexels.com/license/). Free for commercial 
 - home-additions-after.jpg: https://www.pexels.com/photo/20858565/
 - demolition-before.jpg: https://www.pexels.com/photo/39398598/
 - demolition-after.jpg: https://www.pexels.com/photo/12724413/
-- snow-removal-before.jpg: https://www.pexels.com/photo/6220208/
-- snow-removal-after.jpg: https://www.pexels.com/photo/10930882/
+- snow-removal-before.jpg: https://www.pexels.com/photo/36826123/
+- snow-removal-after.jpg: https://www.pexels.com/photo/30731973/

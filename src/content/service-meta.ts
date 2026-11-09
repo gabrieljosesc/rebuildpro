@@ -155,7 +155,7 @@ export const serviceMeta: Record<string, Meta> = {
     group: "Exterior & property",
     hint: "Seasonal contracts, salting, commercial",
     featured: true,
-    before: "House and driveway buried after a heavy snowfall",
-    after: "Snow blower clearing a residential driveway",
+    before: "Car and driveway buried under deep snow after a storm",
+    after: "Walkway shovelled clear between snowbanks after a storm",
   },
 };
