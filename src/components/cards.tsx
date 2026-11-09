@@ -17,6 +17,8 @@ export function ServiceCard({ service }: { service: Service }) {
           alt={service.photos.after.alt}
           fill
           sizes="(min-width: 1024px) 24rem, (min-width: 640px) 50vw, 100vw"
+          quality={65}
+          fetchPriority="low"
           className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
         />
         <span className="absolute left-3 top-3 flex size-9 items-center justify-center rounded-lg bg-ink text-accent">

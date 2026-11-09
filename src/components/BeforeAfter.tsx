@@ -20,6 +20,7 @@ function Panel({
         fill
         sizes={sizes}
         priority={priority}
+        quality={70}
         className="object-cover"
       />
       <figcaption className="absolute left-3 top-3 rounded bg-ink/90 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
@@ -46,7 +47,8 @@ export function BeforeAfter({
   priority?: boolean;
   caption?: string;
 }) {
-  const sizes = "(min-width: 1024px) 36rem, (min-width: 640px) 50vw, 100vw";
+  // Each panel is half the width of the pair.
+  const sizes = "(min-width: 1024px) 18rem, 50vw";
   return (
     <div>
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line">
