@@ -9,17 +9,26 @@ export function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group flex flex-col rounded-xl border border-line bg-white p-6 transition-shadow hover:shadow-md"
+      className="group flex flex-col overflow-hidden rounded-xl border border-line bg-white transition-shadow hover:shadow-md"
     >
-      <span className="flex size-11 items-center justify-center rounded-lg bg-ink text-accent">
-        <ServiceIcon slug={service.slug} />
+      <span className="relative block aspect-[16/9] overflow-hidden bg-paper">
+        <Image
+          src={service.photos.after.src}
+          alt={service.photos.after.alt}
+          fill
+          sizes="(min-width: 1024px) 24rem, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+        />
+        <span className="absolute left-3 top-3 flex size-9 items-center justify-center rounded-lg bg-ink text-accent">
+          <ServiceIcon slug={service.slug} className="size-5" />
+        </span>
       </span>
-      <h3 className="mt-4 text-xl font-bold group-hover:text-accent-dark">
-        {service.name}
-      </h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{service.short}</p>
-      <span className="mt-4 text-sm font-semibold">
-        Learn more <span aria-hidden="true">→</span>
+      <span className="flex flex-1 flex-col p-5">
+        <h3 className="text-xl font-bold group-hover:text-accent-dark">{service.name}</h3>
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{service.short}</p>
+        <span className="mt-4 text-sm font-semibold">
+          Learn more <span aria-hidden="true">→</span>
+        </span>
       </span>
     </Link>
   );
@@ -94,6 +103,11 @@ export function ProjectCard({ project }: { project: Project }) {
             <dd className="text-muted">{project.duration}</dd>
           </div>
         </dl>
+        {project.sample && project.before && (
+          <p className="mt-3 text-xs text-muted">
+            Representative photos; project photos are added as jobs are completed.
+          </p>
+        )}
       </div>
     </article>
   );

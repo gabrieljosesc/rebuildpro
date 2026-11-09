@@ -1,0 +1,46 @@
+# Photo credits
+
+Stock photos from Pexels (https://www.pexels.com/license/). Free for commercial use, no attribution required; listed here for the record.
+
+- framing-before.jpg: https://www.pexels.com/photo/8488031/
+- framing-after.jpg: https://www.pexels.com/photo/8830256/
+- insulation-before.jpg: https://www.pexels.com/photo/37627682/
+- insulation-after.jpg: https://www.pexels.com/photo/6124239/
+- drywall-and-taping-before.jpg: https://www.pexels.com/photo/36035072/
+- drywall-and-taping-after.jpg: https://www.pexels.com/photo/7031603/
+- electrical-before.jpg: https://www.pexels.com/photo/28242896/
+- electrical-after.jpg: https://www.pexels.com/photo/28265032/
+- plumbing-before.jpg: https://www.pexels.com/photo/15206136/
+- plumbing-after.jpg: https://www.pexels.com/photo/6419128/
+- flooring-before.jpg: https://www.pexels.com/photo/11126101/
+- flooring-after.jpg: https://www.pexels.com/photo/3935327/
+- painting-and-trim-before.jpg: https://www.pexels.com/photo/6764282/
+- painting-and-trim-after.jpg: https://www.pexels.com/photo/7836571/
+- tiling-before.jpg: https://www.pexels.com/photo/29181495/
+- tiling-after.jpg: https://www.pexels.com/photo/35868666/
+- basement-finishing-before.jpg: https://www.pexels.com/photo/4092026/
+- basement-finishing-after.jpg: https://www.pexels.com/photo/5661020/
+- kitchens-and-bathrooms-before.jpg: https://www.pexels.com/photo/36035073/
+- kitchens-and-bathrooms-after.jpg: https://www.pexels.com/photo/8186477/
+- hvac-before.jpg: https://www.pexels.com/photo/36152008/
+- hvac-after.jpg: https://www.pexels.com/photo/20046692/
+- roofing-before.jpg: https://www.pexels.com/photo/33404248/
+- roofing-after.jpg: https://www.pexels.com/photo/18098285/
+- waterproofing-before.jpg: https://www.pexels.com/photo/7717787/
+- waterproofing-after.jpg: https://www.pexels.com/photo/39238314/
+- siding-and-exterior-before.jpg: https://www.pexels.com/photo/35107481/
+- siding-and-exterior-after.jpg: https://www.pexels.com/photo/20296321/
+- windows-and-doors-before.jpg: https://www.pexels.com/photo/17674965/
+- windows-and-doors-after.jpg: https://www.pexels.com/photo/5691507/
+- decks-and-fences-before.jpg: https://www.pexels.com/photo/5302581/
+- decks-and-fences-after.jpg: https://www.pexels.com/photo/11903184/
+- concrete-and-masonry-before.jpg: https://www.pexels.com/photo/36797979/
+- concrete-and-masonry-after.jpg: https://www.pexels.com/photo/10827223/
+- interlock-and-landscaping-before.jpg: https://www.pexels.com/photo/17876706/
+- interlock-and-landscaping-after.jpg: https://www.pexels.com/photo/25972319/
+- home-additions-before.jpg: https://www.pexels.com/photo/28885519/
+- home-additions-after.jpg: https://www.pexels.com/photo/20858565/
+- demolition-before.jpg: https://www.pexels.com/photo/39398598/
+- demolition-after.jpg: https://www.pexels.com/photo/12724413/
+- snow-removal-before.jpg: https://www.pexels.com/photo/6220208/
+- snow-removal-after.jpg: https://www.pexels.com/photo/10930882/

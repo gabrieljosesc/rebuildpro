@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { areas } from "@/content/areas";
-import { services } from "@/content/services";
+import { serviceGroups } from "@/content/services";
 import { confirmedCredentials, site } from "@/lib/site";
 import { Logo } from "./Logo";
 import { PhoneLink, container } from "./ui";
@@ -43,12 +43,12 @@ function Column({
 export function Footer() {
   return (
     <footer className="bg-ink pb-24 text-white md:pb-0">
-      <div className={`${container} grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4`}>
+      <div className={`${container} grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5`}>
         <div>
           <Logo light />
           <p className="mt-4 text-sm leading-relaxed text-white/70">
-            Interior general contractor for insurance rebuilds and renovations
-            in {site.serviceRegion}.
+            General contractor for insurance rebuilds, renovations and exterior
+            work in {site.serviceRegion}.
           </p>
           <address className="mt-4 space-y-1 text-sm not-italic text-white/85">
             <p className="font-semibold">{site.name}</p>
@@ -75,10 +75,13 @@ export function Footer() {
             </ul>
           )}
         </div>
-        <Column
-          title="Services"
-          links={services.map((s) => ({ href: `/services/${s.slug}`, label: s.name }))}
-        />
+        {serviceGroups.map((g) => (
+          <Column
+            key={g.group}
+            title={g.group === "Interior" ? "Interior services" : "Exterior & property"}
+            links={g.services.map((s) => ({ href: `/services/${s.slug}`, label: s.name }))}
+          />
+        ))}
         <Column
           title="Service areas"
           links={areas.map((a) => ({ href: `/areas/${a.slug}`, label: a.name }))}
@@ -105,7 +108,7 @@ export function Footer() {
             <li>
               <span className="font-display font-bold text-accent">{site.name}</span>
               <span className="block text-sm text-white/65">
-                Interior rebuilds and renovations
+                Rebuilds, renovations and exterior work
               </span>
             </li>
           </ul>

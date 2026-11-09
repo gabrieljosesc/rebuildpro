@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BeforeAfter } from "@/components/BeforeAfter";
 import { AreaLinks } from "@/components/cards";
 import {
   CheckIcon,
@@ -13,7 +14,7 @@ import {
   container,
 } from "@/components/ui";
 import { areas } from "@/content/areas";
-import { serviceBySlug, services } from "@/content/services";
+import { photosAreStock, serviceBySlug, services } from "@/content/services";
 import { faqSchema, serviceSchema } from "@/lib/schema";
 
 export const dynamicParams = false;
@@ -61,7 +62,16 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
 
       <div className={`${container} grid gap-12 py-14 lg:grid-cols-[1fr_20rem]`}>
         <div>
-          <section>
+          <section aria-label={`${service.name} before and after`}>
+            <BeforeAfter
+              before={service.photos.before}
+              after={service.photos.after}
+              stock={photosAreStock}
+              priority
+            />
+          </section>
+
+          <section className="mt-10">
             <h2 className="text-2xl font-extrabold">
               What does our {service.name.toLowerCase()} service include?
             </h2>

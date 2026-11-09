@@ -7,7 +7,9 @@ export type Project = {
   scope: string[];
   duration: string;
   // Paths under /public, e.g. "/portfolio/north-york-basement-before.jpg".
-  // While null, the card shows a labelled placeholder panel.
+  // While null, the card shows a labelled placeholder panel. Sample entries
+  // currently point at the representative stock photos in
+  // /public/images/services and say so on the card.
   before: string | null;
   after: string | null;
   // PLACEHOLDER entries describe a typical scope, not a completed job. They
@@ -26,8 +28,8 @@ export const projects: Project[] = [
       "Finished basement with two inches of standing water. Perimeter flood cut, new insulation and drywall, vinyl plank flooring, trim and paint.",
     scope: ["Insulation", "Drywall and taping", "Flooring", "Painting and trim"],
     duration: "3 to 5 weeks",
-    before: null,
-    after: null,
+    before: "/images/services/framing-before.jpg",
+    after: "/images/services/basement-finishing-after.jpg",
     sample: true,
   },
   {
@@ -39,8 +41,8 @@ export const projects: Project[] = [
       "Fridge water line leak under hardwood. Base cabinets, subfloor and hardwood replaced, basement ceiling below repaired.",
     scope: ["Kitchens and bathrooms", "Flooring", "Plumbing", "Drywall and taping"],
     duration: "4 to 6 weeks",
-    before: null,
-    after: null,
+    before: "/images/services/kitchens-and-bathrooms-before.jpg",
+    after: "/images/services/kitchens-and-bathrooms-after.jpg",
     sample: true,
   },
   {
@@ -52,8 +54,8 @@ export const projects: Project[] = [
       "Second-floor bathroom supply failure. Bathroom floor rebuilt, main-floor ceiling and walls replaced, hardwood refinished.",
     scope: ["Plumbing", "Drywall and taping", "Flooring", "Painting and trim"],
     duration: "4 to 6 weeks",
-    before: null,
-    after: null,
+    before: "/images/services/plumbing-before.jpg",
+    after: "/images/services/painting-and-trim-after.jpg",
     sample: true,
   },
   {
@@ -65,8 +67,8 @@ export const projects: Project[] = [
       "Unfinished block-wall basement turned into a recreation room, bedroom and three-piece bathroom, with permit and inspections.",
     scope: ["Basement finishing", "Framing", "Electrical", "Plumbing"],
     duration: "8 to 10 weeks",
-    before: null,
-    after: null,
+    before: "/images/services/basement-finishing-before.jpg",
+    after: "/images/services/drywall-and-taping-after.jpg",
     sample: true,
   },
   {
@@ -78,8 +80,8 @@ export const projects: Project[] = [
       "Original bathroom in a semi-detached house taken back to the studs. New plumbing, waterproofed shower, heated tile floor.",
     scope: ["Kitchens and bathrooms", "Plumbing", "Electrical"],
     duration: "3 to 4 weeks",
-    before: null,
-    after: null,
+    before: "/images/services/tiling-before.jpg",
+    after: "/images/services/tiling-after.jpg",
     sample: true,
   },
   {
@@ -91,8 +93,8 @@ export const projects: Project[] = [
       "Ceiling and wall drywall replaced, engineered hardwood relaid over acoustic underlay, full repaint.",
     scope: ["Drywall and taping", "Flooring", "Painting and trim"],
     duration: "2 to 3 weeks",
-    before: null,
-    after: null,
+    before: "/images/services/drywall-and-taping-before.jpg",
+    after: "/images/services/flooring-after.jpg",
     sample: true,
   },
 ];

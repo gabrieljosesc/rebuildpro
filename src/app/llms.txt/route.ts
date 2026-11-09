@@ -11,7 +11,7 @@ export function GET() {
 
 > ${site.description}
 
-- Business type: Interior general contractor
+- Business type: General contractor (interior rebuilds, renovations, exterior and property services)
 - Service region: ${site.serviceRegion}, Ontario, Canada
 - Phone: ${site.phone.display}
 - Email: ${site.email}

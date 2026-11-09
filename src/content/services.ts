@@ -1,27 +1,12 @@
-export type Faq = { q: string; a: string };
+import { serviceMeta, stockPhotos } from "./service-meta";
+import type { Service, ServiceDraft } from "./service-types";
+import { moreServices } from "./services-more";
 
-export type Service = {
-  slug: string;
-  name: string;
-  /** Card blurb */
-  short: string;
-  metaTitle: string;
-  metaDescription: string;
-  h1: string;
-  /** Answer-first opening, 1-2 sentences */
-  answer: string;
-  includes: string[];
-  sections: { heading: string; body: string[] }[];
-  cost: { range: string; note: string };
-  timeline: string;
-  faqs: Faq[];
-  related: string[];
-  updated: string;
-};
+export type { Faq, Service } from "./service-types";
 
 // Cost ranges are typical 2026 GTA figures for planning only. Joe to review
 // before launch; every job is priced by written quote.
-export const services: Service[] = [
+const interiorServices: ServiceDraft[] = [
   {
     slug: "framing",
     name: "Framing",
@@ -568,6 +553,45 @@ export const services: Service[] = [
     updated: "2026-10-05",
   },
 ];
+
+function attachMeta(draft: ServiceDraft): Service {
+  const meta = serviceMeta[draft.slug];
+  if (!meta) throw new Error(`Missing service metadata for ${draft.slug}`);
+  return {
+    ...draft,
+    group: meta.group,
+    hint: meta.hint,
+    featured: meta.featured ?? false,
+    photos: {
+      before: { src: `/images/services/${draft.slug}-before.jpg`, alt: meta.before },
+      after: { src: `/images/services/${draft.slug}-after.jpg`, alt: meta.after },
+    },
+  };
+}
+
+// Interior trades first (the original line-up), then exterior and property
+// services. Tiling and HVAC are interior trades that live in the second file.
+const order = [
+  "framing", "insulation", "drywall-and-taping", "electrical", "plumbing", "flooring",
+  "painting-and-trim", "tiling", "basement-finishing", "kitchens-and-bathrooms", "hvac",
+  "roofing", "waterproofing", "siding-and-exterior", "windows-and-doors", "decks-and-fences",
+  "concrete-and-masonry", "interlock-and-landscaping", "home-additions", "demolition",
+  "snow-removal",
+];
+
+export const services: Service[] = [...interiorServices, ...moreServices]
+  .map(attachMeta)
+  .sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
+
+export const serviceGroups = (["Interior", "Exterior & property"] as const).map((group) => ({
+  group,
+  services: services.filter((s) => s.group === group),
+}));
+
+export const featuredServices = services.filter((s) => s.featured);
+
+/** True while the before/after photos are stock imagery rather than Rebuild Pro jobs. */
+export const photosAreStock = stockPhotos;
 
 export const serviceBySlug = (slug: string) =>
   services.find((s) => s.slug === slug);

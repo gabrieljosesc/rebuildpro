@@ -7,7 +7,7 @@ import { confirmedCredentials, site, warrantyText } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Rebuild Pro Contracting",
   description:
-    "Rebuild Pro Contracting is an interior general contractor in Toronto and the GTA, part of a group with RapidDry Restoration and DryFort Waterproofing.",
+    "Rebuild Pro Contracting is a general contractor in Toronto and the GTA for insurance rebuilds, renovations and exterior work, part of a group with RapidDry Restoration and DryFort Waterproofing.",
   alternates: { canonical: "/about" },
 };
 
@@ -36,7 +36,7 @@ export default function AboutPage() {
       <PageHero
         crumbs={[{ name: "About", path: "/about" }]}
         title={`About ${site.name}`}
-        lead={`${site.name} is an interior general contractor serving ${site.serviceRegion}. We rebuild homes to pre-loss condition after water damage and other insured losses, and we take on planned renovations for homeowners who want the same standard of work.`}
+        lead={`${site.name} is a general contractor serving ${site.serviceRegion}. We rebuild homes to pre-loss condition after water damage and other insured losses, and we take on planned renovations and exterior work, from roofing and waterproofing to additions, for homeowners who want the same standard of work.`}
       />
       <div className={`${container} py-14`}>
         <section className="max-w-3xl">

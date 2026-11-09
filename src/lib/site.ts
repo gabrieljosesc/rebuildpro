@@ -28,7 +28,7 @@ export const site = {
   },
   serviceRegion: "Toronto and the GTA",
   description:
-    "Rebuild Pro Contracting restores damaged home interiors to pre-loss condition and completes renovations across Toronto and the GTA, from framing and insulation to drywall, electrical, plumbing and finishing.",
+    "Rebuild Pro Contracting restores damaged homes to pre-loss condition and completes renovations across Toronto and the GTA: framing, drywall, electrical, plumbing, kitchens and basements inside; roofing, waterproofing, siding, decks, additions and snow removal outside.",
   // PLACEHOLDER: workmanship warranty term in years. While null, pages say
   // the term is stated on the written quote.
   warrantyYears: null as number | null,

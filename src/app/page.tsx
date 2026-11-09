@@ -17,7 +17,7 @@ import {
 import { areas } from "@/content/areas";
 import { homeFaqs, processSteps } from "@/content/process";
 import { projects } from "@/content/projects";
-import { services } from "@/content/services";
+import { featuredServices, services } from "@/content/services";
 import { faqSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
@@ -44,17 +44,17 @@ export default function Home() {
         <div className={`${container} grid gap-10 py-12 sm:py-20 lg:grid-cols-[1.25fr_1fr] lg:items-center`}>
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-              Interior general contractor · {site.serviceRegion}
+              General contractor · {site.serviceRegion}
             </p>
             <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] sm:text-6xl">
               Restored to <span className="whitespace-nowrap">pre-loss</span> condition.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/85">
-              {site.name} rebuilds home interiors after water damage and bills
-              your insurer directly. One team handles framing, insulation,
-              drywall, electrical, plumbing and finishing across{" "}
-              {site.serviceRegion}, for insurance claims and planned
-              renovations alike.
+              {site.name} rebuilds homes after water damage and bills your
+              insurer directly. One team handles framing, drywall, electrical,
+              plumbing and finishing inside, and roofing, waterproofing, siding
+              and additions outside, across {site.serviceRegion}, for insurance
+              claims and planned renovations alike.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="#quote" className={btnPrimary}>
@@ -127,12 +127,12 @@ export default function Home() {
               Renovation
             </p>
             <h2 className="mt-2 text-2xl font-extrabold">
-              Planning a basement, kitchen or bathroom?
+              Planning a renovation, roof or addition?
             </h2>
             <p className="mt-3 leading-relaxed text-muted">
               The same crew that rebuilds after a loss takes on planned work:
-              finished basements, kitchens, bathrooms and single-trade jobs,
-              with a written quote, permits and a warranty.
+              basements, kitchens, bathrooms, roofing, siding, decks and home
+              additions, with a written quote, permits and a warranty.
             </p>
             <Link href="/services" className={`${btnOutline} mt-5`}>
               See renovation services
@@ -144,14 +144,19 @@ export default function Home() {
       <section className={`${container} py-16`}>
         <SectionHeading
           eyebrow="Services"
-          title="Every interior trade under one contract"
+          title="Every trade under one contract, inside and out"
           lead="No coordinating five subcontractors. Each stage is scheduled, inspected and handed to the next by the same team."
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
+          {featuredServices.map((s) => (
             <ServiceCard key={s.slug} service={s} />
           ))}
         </div>
+        <p className="mt-8 text-center">
+          <Link href="/services" className={btnOutline}>
+            See all {services.length} services
+          </Link>
+        </p>
       </section>
 
       <section className="bg-paper">

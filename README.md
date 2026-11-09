@@ -36,7 +36,8 @@ Search the code for `PLACEHOLDER`. The items waiting on Joe or on business setup
 - Credentials (WSIB, liability insurance, electrical licence): flip `confirmed` to `true` in `site.ts` once each is in place. Unconfirmed ones are not shown.
 - Warranty term: set `warrantyYears` in `site.ts`.
 - Reviews: add to `reviews.ts`. Review schema and star ratings appear automatically.
-- Portfolio: entries are marked `sample: true` and show "Sample scope" with empty photo panels. Replace with real projects and photos.
+- Portfolio: entries are marked `sample: true` and show "Sample scope" with representative stock photos. Replace with real projects and photos.
+- Service photos: `public/images/services/<slug>-before.jpg` and `-after.jpg` are licensed stock photos (see `CREDITS.md` there). Replace with Joe's job photos under the same names and set `stockPhotos` to `false` in `src/content/service-meta.ts` to drop the "Representative photos" line.
 - Cost ranges in `services.ts` and the "reply within one business day" promise: have Joe confirm.
 - `sameAs` links in `site.ts`: Google Business Profile, HomeStars, Houzz, BBB, Yelp.
 
